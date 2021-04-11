@@ -1,3 +1,33 @@
 body {
     padding-top: 5rem;
 }
+
+.list .messages{
+    padding: 10px;
+    background-color: rgb(173, 255, 173);
+    color: rgb(2, 92, 2);
+    border-radius: 10px;
+}
+
+.list .errors{
+    padding: 10px;
+    background-color: rgb(252, 228, 208);
+    color: rgb(134, 2, 2);
+    border-radius: 10px;
+}
+
+#sub{
+    padding: 5px 15px;
+    background-color: #0b6c92;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+
+#descrip{
+    border: 1px solid gray;
+    width: 100%;
+}
+
+
+
