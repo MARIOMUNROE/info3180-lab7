@@ -22,7 +22,7 @@ app.component('app-header', {
           <li class="nav-item active">
             <router-link class="nav-link" to="/">Home <span class="sr-only">(current)</span></router-link>
           </li>
-		   <li class="nav-item">
+		   <li class="nav-item active">
             <router-link to="/api/upload" class="nav-link">Upload</router-link>
           </li>
         </ul>
@@ -79,22 +79,30 @@ const Upload = {
         <h1>Upload Form</h1>
         <ul class="list">
             <li v-for="message in messages"class="messages">
-                {{message.message}}
-                {{message.filename}}
+
+                {{message.message}}{{message.filename}}
+
             </li>
+
             <li v-for="error in error"class="errors">
-                {{error.error[0]}} <br>
+
+                {{error.error[0]}} 
+                <br>
                 {{error.error[1]}}
+
             </li>
         </ul>
         <form id="uploadForm" methods="POST" name="uploadForm" @submit.prevent="uploadPhoto" enctype="multipart/form-data">
-            <label for="description">Description</label><br/>
+            <label for="description">Description</label>
+            <br/>
             <textarea type="text"  id="descrip" name="description"></textarea>
             <br/>
+
             <br/>
             <label for="photo"> Photo Upload</label><br/>
             <input type="file" id="photo" name="photo"/>
             <br/>
+
             <br/>
             <button id="sub" type="submit" name="submit">Submit</button>
         </form>
@@ -124,7 +132,7 @@ const Upload = {
                 return response.json();
             })
             .then(function(jsonResponse) {
-                //display a success message
+                //display a success/error message
                 console.log(jsonResponse);
                 self.messages = jsonResponse.messages;
                 self.error = jsonResponse.errors;

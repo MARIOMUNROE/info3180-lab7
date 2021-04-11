@@ -58,7 +58,7 @@ def upload():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 		
         messages = [{
-            "message": "Upload Successful",
+            "message": "File Upload Successful",
             "filename": filename,
             "description": request.form['description']
         }]
